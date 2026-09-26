@@ -1,0 +1,195 @@
+/* Reset universal (aplicado em todas as páginas) */
+* {
+    margin: 0; /* Remove as margens externas padrão de todos os elementos */
+    padding: 0; /* Remove os preenchimentos internos padrão */
+    box-sizing: border-box; /* Impede que bordas e preenchimentos aumentem o tamanho total definido para o elemento */
+}
+
+/* Configurações gerais (aplicado em todas as páginas) */
+body {
+    font-family: Arial, sans-serif; /* Define a família da fonte do texto */
+    background-color: #f4f4f9; /* Define a cor de fundo */
+    color: #333333; /* Define a cor do texto principal */
+    line-height: 1.6; /* Define o espaçamento vertical entre as linhas do texto */
+}
+
+/* Cabeçalho da página principal */
+header {
+    background-color: #89CFF0; 
+    text-align: center; /* Centraliza o texto horizontalmente */
+    padding: 60px 20px; /* Cria espaçamento interno em cima e embaixo do texto */
+    border-bottom: 5px solid #FFB347; /* Adiciona uma linha de borda apenas na parte inferior */
+    width: 100%; /* Garante que ocupe a tela toda de ponta a ponta */
+}
+
+header h1 {
+    color: #000000;
+    margin-bottom: 10px; /* Adiciona margem externa na parte de baixo */
+}
+
+/* Rodapé */
+footer {
+    background-color: #89CFF0;
+    text-align: center;
+    padding: 60px 20px;
+    width: 100%;
+}
+
+footer h2 {
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Estilo geral dos botões (links) */
+a {
+    display: inline-block; /* Permite que o link tenha altura e largura controláveis como um botão */
+    background-color: #FFB347;
+    color: #000000;
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 15px 30px;
+    border-radius: 5px; /* Arredonda os cantos do elemento */
+    margin-top: 15px;
+    transition: 0.3s; /* Aplica uma transição suave de tempo a qualquer mudança de estado */
+}
+
+a:hover {
+    /* O ':hover' ativa as regras abaixo apenas quando o cursor interage com o elemento */
+    background-color: #E59424; 
+}
+
+/* Seções do site */
+section {
+    padding: 40px 20px;
+    max-width: 1100px; /* Limite máximo de largura para caber 3 caixas lado a lado */
+    margin: 0 auto; /* O valor 'auto' centraliza o bloco na tela */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%; /* Força o título a ocupar a linha inteira sozinho */
+}
+
+/* Cards dos workshops */
+article {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 5px solid #FFB347; /* Adiciona uma borda apenas na lateral esquerda */
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Cria um efeito de sombra suave ao redor da caixa */
+}
+
+article h3 {
+    margin-top: 0; /* Remove o espaço superior */
+    margin-bottom: 10px;
+}
+
+/* Lista da programação */
+ul {
+    list-style: none; /* Remove os marcadores em formato de bolinha da lista */
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-left: 5px solid #FFB347;
+    border-radius: 5px;
+}
+
+/* Responsividade para telas maiores (organização de 3 em 3) */
+@media (min-width: 900px) {
+    section:nth-of-type(2) {
+        display: flex; /* Ativa o modo de layout flexível */
+        flex-wrap: wrap; /* Permite que os itens desçam de linha se não houver espaço na tela */
+        justify-content: space-between; /* Distribui o espaço vazio igualmente entre as caixas */
+    }
+
+    article {
+        width: 31%; /* Força as caixas a ocuparem menos de um terço do espaço */
+        margin-bottom: 30px; /* Espaço entre a linha de cima e a de baixo */
+    }
+}
+
+/* Identifica automaticamente a página de inscrição e muda o cabeçalho para laranja */
+body:has(.secao-formulario) header {
+    background-color: #FFB347; 
+    border-bottom: 8px solid #89CFF0; 
+}
+
+/* Caixa do formulário */
+.secao-formulario {
+    background-color: #ffffff;
+    width: 90%; 
+    max-width: 500px; 
+    margin: 30px auto 50px auto; /* Ajustado para dar espaço ao botão de voltar */
+    padding: 40px;
+    border-radius: 8px; 
+    border: 1px solid #cccccc; /* Adiciona uma linha de borda em todos os lados */
+    border-top: 8px solid #89CFF0;
+}
+
+/* Área e botão de voltar para a página inicial */
+.container-voltar {
+    width: 90%;
+    max-width: 500px;
+    margin: 30px auto 0 auto;
+    text-align: left;
+}
+
+.btn-voltar {
+    background-color: #89CFF0;
+    color: #000000;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.btn-voltar:hover {
+    background-color: #6bb8e2;
+}
+
+/* Formulário (Usando Flexbox estruturado) */
+form {
+    display: flex; 
+    flex-direction: column; /* Organiza os elementos internos de cima para baixo */
+    gap: 12px; /* Cria um espaçamento automático entre os itens do layout flexível */
+}
+
+label {
+    font-weight: bold; 
+    margin-top: 10px; 
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px; 
+}
+
+/* Botão de confirmar */
+.btn-confirmar {
+    background-color: #FFB347;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px;
+    border: none; /* Remove as configurações visuais de botão do navegador */
+    border-radius: 5px;
+    cursor: pointer; /* Altera o ícone do mouse ao passar por cima */
+    margin-top: 20px;
+    transition: 0.3s; 
+}
+
+.btn-confirmar:hover {
+    background-color: #E59424; 
+}
